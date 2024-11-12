@@ -1,0 +1,3 @@
+﻿  main.cpp
+D:\project-c\sendandrecive\sendandrecive\main.cpp(24,23): warning C4267: 'return': conversion from 'size_t' to 'DWORD', possible loss of data
+  sendandrecive.vcxproj -> D:\project-c\sendandrecive\x64\Debug\sendandrecive.exe

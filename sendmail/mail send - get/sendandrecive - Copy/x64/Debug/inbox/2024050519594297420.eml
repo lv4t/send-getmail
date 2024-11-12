@@ -1,0 +1,91 @@
+Delivered-To: luantest7@gmail.com
+Received: by 2002:a05:7010:2caf:b0:3bf:7305:2566 with SMTP id fz47csp726560mdb;
+        Sat, 4 May 2024 21:46:51 -0700 (PDT)
+X-Received: by 2002:a05:6a21:594:b0:1a3:a821:f297 with SMTP id lw20-20020a056a21059400b001a3a821f297mr8978862pzb.2.1714884411249;
+        Sat, 04 May 2024 21:46:51 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1714884411; cv=none;
+        d=google.com; s=arc-20160816;
+        b=EFIQUDnyDFDSRpa6WI1SzyXfg1ucYkXSXbbQPg5TgIPpJhcsr0qMWsVXKqTh3DCUVE
+         4LSbpZ5NfW8I4aV6EO/G4qX/cmuswsWtreesb5I7AMgzG/DZ/vK3sTWnFWbJ1y4OlxmP
+         BQE92lXHa/ZF03/8FRq8CfIlI3ccKWCevb7YWgaGPKfJYJDOApDsoUi4MF1rOYmUtt2e
+         ghXJ0TE2LsXkMxaKt0Un38Y5zcSkTJJvdNRvY1uPoMSQr5I1fNErS31aVXatmr3DzIFP
+         zRkmM6G45gVH2P8TV2Jn8hZZLbsNw7U77B8UD8bl370yzNKhfvYc/S12eD3IoLrsnHMA
+         pUMA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-disposition:content-transfer-encoding:mime-version:date
+         :subject:to:from:message-id:dkim-signature;
+        bh=YOKJXV17ipUQkl2S4ef24nzI+bdTHOGFPgVGGzgvCUk=;
+        fh=VnxoQbbmXHTpIL9niQd4Q72iVp3g4OSPZK0o87/qsGs=;
+        b=cs7jK8HMfq8pPCDoXxt0jARl5FIquejyHnHK3s4ypNPLvn4SW6cx7H/NAOnkcXWQ00
+         sepRnU2SFWUkP5JAdbvBriLPgl/BCCuREiRZgYBJP+vyCGiWa/2S6BVKAmA48YeVKbM4
+         MevK42k44Bj2rHjESq1MyVSCq+5jZ1QJjck6vzBlzJyw1htWEPLgUrIe5WqcDYQMVn6j
+         kwIY5jcxjGHTqWwdxy4duPpgNtsjru3Rq/8aXCJbWYEkwXXnXk3SSbknZlAi3CkoLk1G
+         hLrOp/Ani4PjAkvTxvTyV0a+kbUH5dVHAJ9/MjoRo/Buq1IdZpfZg5WV9srlF4SFmCpN
+         0Iog==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=lDLumEbP;
+       spf=pass (google.com: domain of luan93vk@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=luan93vk@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <luan93vk@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id ic7-20020a056a008a0700b006f45757a5b5sor1529646pfb.4.2024.05.04.21.46.51
+        for <luantest7@gmail.com>
+        (Google Transport Security);
+        Sat, 04 May 2024 21:46:51 -0700 (PDT)
+Received-SPF: pass (google.com: domain of luan93vk@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=lDLumEbP;
+       spf=pass (google.com: domain of luan93vk@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=luan93vk@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1714884410; x=1715489210; dara=google.com;
+        h=content-disposition:content-transfer-encoding:mime-version:date
+         :subject:to:from:message-id:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=YOKJXV17ipUQkl2S4ef24nzI+bdTHOGFPgVGGzgvCUk=;
+        b=lDLumEbPmNOEz3siM547YkG7wd6vTQ7m5imH6KyId205EtiUmep3YtcgG1MrKzwVxB
+         +In5wKfPQ4B97ghpUv8t1yRxNebjEGL4U/4N1dAkE+aPqnvVwoHNhMPcnSYBtnhDB78U
+         vhm8LOwyiWsp1qY5RgNkqYzb9ihYfie1NPbw2pbXj5gag7k4yKx+A3+u/B6RWEKT/ZnF
+         yVyyGfcj2bs+N0nQSpWORPqApWG08GQn70YG7ZQWjkd0KJzdyNH5UQUvM/sXwIVzx3hU
+         4LZL6XrMf8/VjIq3tTMYwR0g6Twj927hnUI++OW2IJlrAcRaOb0kGNdvpRkSeouscAvG
+         HcaQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1714884410; x=1715489210;
+        h=content-disposition:content-transfer-encoding:mime-version:date
+         :subject:to:from:message-id:x-gm-message-state:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=YOKJXV17ipUQkl2S4ef24nzI+bdTHOGFPgVGGzgvCUk=;
+        b=Qt1feOcOZVUPcwbomTsp3M/cmMKsMIgYUrzsFPwRVAZy6JVj9xQr4eK0wnsNFrlB9s
+         Obh3pfI2Na7OMWnh1d5/amkzEfEXS9SUnDQ23C1SNUmGyYT7eZyqkKFUD7k17ZRvPQgc
+         UvR8q7466gEHVWTDWoXTVWSNiIovPYzSDJCvzaui/obSoJA+s+1lGOfI8yCduVYCGcfm
+         jyCA2IVjIAsnAsTKpz8XvU1kA3CHEAIGujJDBBahj6BbBEfFsLXvNDnJ8d0NxzX6w9ez
+         Cpj9Gn7O8wB3ZPxVXMxJWHY2i8VS9CWtgFcTngBki51PRzeqFZweX30MRQN6YvnEYnkJ
+         10vA==
+X-Gm-Message-State: AOJu0Yzk7k+Np6yXOnQ0/1+tDXsKWalKvBW2IarMnvzHIUrguDqEFK9K
+	+Iju385BD6peMoSBvMxeUxUMhsNLFtBGeny9lQnCCVrMG2YfG5tl4JHCvb/r
+X-Google-Smtp-Source: AGHT+IFhksQSSZfe1htKMmW3x5jgQkYb665VEt43Dz8qLdFdS56ZWX3Jc55XkJAfwFPjPzo+GE83Dg==
+X-Received: by 2002:a05:6a21:329a:b0:1a9:d27c:3151 with SMTP id yt26-20020a056a21329a00b001a9d27c3151mr16606028pzb.23.1714884410261;
+        Sat, 04 May 2024 21:46:50 -0700 (PDT)
+Return-Path: <luan93vk@gmail.com>
+Received: from desktop-bbg99ro.local ([118.70.31.96])
+        by smtp.gmail.com with ESMTPSA id j12-20020a63cf0c000000b005ff58ee59b8sm5587226pgg.44.2024.05.04.21.46.49
+        for <luantest7@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 04 May 2024 21:46:49 -0700 (PDT)
+Received: from desktop-bbg99ro.local ([127.0.0.1]) by desktop-bbg99ro.local ([127.0.0.1])
+  with SMTPD32; Sun, 5 May 2024 11:46:50 +0700
+Message-ID: <5c79af314f8d39844a8cfb4000173c8e@gmail.com>
+From: <luan93vk@gmail.com>
+To: <luantest7@gmail.com>
+Subject: 
+Date: Sun, 5 May 2024 11:46:50 +0700
+MIME-Version: 1.0
+Content-Type: application/octet-stream;
+	name="attachment"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment;
+	filename="attachment"
+
+c2RmZ2hqa2xsa2pocmpmbmdo
+
